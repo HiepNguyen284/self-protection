@@ -5,7 +5,7 @@ const app = express();
 // Giới hạn số lần yêu cầu cho mỗi IP
 const limiter = rateLimit({
   windowMs: 60 * 1000, // 1 phút
-  max: 2, // tối đa 100 yêu cầu trong 15 phút
+  max: 5, // tối đa 2 yêu cầu trong 1 phút
   message: 'Quá nhiều yêu cầu từ IP này, vui lòng thử lại sau',
   handler: (req, res, next) => {
     console.log(`Địa chỉ IP ${req.ip} đã vượt quá số lượng yêu cầu. Tính năng bảo vệ đã được kích hoạt.`);
